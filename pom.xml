@@ -16,7 +16,7 @@
     <artifactId>alibaba-oss-parent</artifactId>
     <version>0.2.1.BUILD-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Spring Cloud Alibaba OSS</name>
+    <name>Spring Cloud Alibaba OSS :: ${project.version}</name>
 
 
     <licenses>

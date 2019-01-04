@@ -1,4 +1,4 @@
-# Microservices-Framework-OSS
+# Alibaba-OSS
 Java Micro-services Base on `Spring Cloud Alibaba`
 
 ## Technology Stack
@@ -30,6 +30,6 @@ Java Micro-services Base on `Spring Cloud Alibaba`
 
 ## Bugs and Feedback
 
-For bug report, questions and discussions please submit [GitHub Issues](https://github.com/misselvexu/microservices-framework-oss/issues).
+For bug report, questions and discussions please submit [GitHub Issues](https://github.com/misselvexu/alibaba-oss/issues).
 
 Contact us: iskp.me@google.com
