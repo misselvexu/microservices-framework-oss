@@ -11,6 +11,19 @@ Java Micro-services Base on `Spring Cloud Alibaba`
 - [x] [Aliabab Sentinel](https://github.com/alibaba/Sentinel)
 - [x] [Apache RocketMQ](http://rocketmq.apache.org)
 
+## Version(s)
+
+| Framework Name | Version | Mark |
+| --- | --- | --- |
+| JDK | `1.8` | `OpenJDK` |
+| Spring Boot | `2.0.5` | -  |
+| Spring Cloud | `Finchley SR2` | -  |
+| Apache Dubbo | `2.6.5` | -  |
+| Alibaba Nacos | `0.7.0` | -  |
+| Apache RocketMQ | `4.3.2` | -  |
+| Spring Cloud Alibaba | `0.2.1.RELEASE` | -  |
+
+
 ## Documentation
 
 ## Quick Start
