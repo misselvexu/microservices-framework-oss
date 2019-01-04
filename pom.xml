@@ -13,7 +13,7 @@
     </parent>
 
     <groupId>xyz.vopen.oss</groupId>
-    <artifactId>microservices-oss-parent</artifactId>
+    <artifactId>alibaba-oss-parent</artifactId>
     <version>0.2.1.BUILD-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Spring Cloud Alibaba OSS</name>
@@ -28,12 +28,12 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/misselvexu/microservices-framework-oss</url>
+        <url>https://github.com/misselvexu/alibaba-oss</url>
         <connection>
-            scm:git:git://github.com/misselvexu/microservices-framework-oss.git
+            scm:git:git://github.com/misselvexu/alibaba-oss.git
         </connection>
         <developerConnection>
-            scm:git:ssh://git@github.com/misselvexu/microservices-framework-oss.git
+            scm:git:ssh://git@github.com/misselvexu/alibaba-oss.git
         </developerConnection>
         <tag>HEAD</tag>
     </scm>
