@@ -1,5 +1,7 @@
 package xyz.vopen.oss.gateway.route;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.cloud.gateway.route.RouteDefinition;
@@ -20,6 +22,7 @@ import reactor.core.publisher.Mono;
 @Component
 public class DefaultDynamicRouteService implements ApplicationEventPublisherAware {
 
+  private static final Logger logger = LoggerFactory.getLogger(DefaultDynamicRouteService.class);
   private final RouteDefinitionWriter routeDefinitionWriter;
   private ApplicationEventPublisher publisher;
 
@@ -28,33 +31,50 @@ public class DefaultDynamicRouteService implements ApplicationEventPublisherAwar
     this.routeDefinitionWriter = routeDefinitionWriter;
   }
 
-  public String add(RouteDefinition definition) {
+  /**
+   * add new route definition
+   *
+   * @param definition a instance of {@link RouteDefinition}
+   */
+  public void add(RouteDefinition definition) {
     routeDefinitionWriter.save(Mono.just(definition)).subscribe();
     this.publisher.publishEvent(new RefreshRoutesEvent(this));
-    return "success";
   }
 
-  public String update(RouteDefinition definition) {
+  /**
+   * Update RouteDefinition
+   *
+   * @param definition a instance of {@link RouteDefinition}
+   */
+  public void update(RouteDefinition definition) {
     try {
       this.routeDefinitionWriter.delete(Mono.just(definition.getId()));
+      logger.info("[OSS-GATEWAY] remove route:[{}] definition from writer.", definition.getId());
     } catch (Exception e) {
-      return "update fail,not find route  routeId: " + definition.getId();
+      logger.warn("[OSS-GATEWAY] upgrade gateway route failed ");
     }
     try {
       routeDefinitionWriter.save(Mono.just(definition)).subscribe();
       this.publisher.publishEvent(new RefreshRoutesEvent(this));
-      return "success";
+      logger.info("[OSS-GATEWAY] publish refresh routes event .");
     } catch (Exception e) {
-      return "update route  fail";
+      logger.warn("[OSS-GATEWAY] save gateway route definition failed ");
     }
   }
 
-  public Mono<ResponseEntity<Object>> delete(String id) {
+  /**
+   * remove route from definition writer
+   *
+   * @param routerId router id
+   * @return delete result
+   */
+  public Mono<ResponseEntity<Object>> delete(String routerId) {
     return this.routeDefinitionWriter
-        .delete(Mono.just(id))
+        .delete(Mono.just(routerId))
         .then(Mono.defer(() -> Mono.just(ResponseEntity.ok().build())))
         .onErrorResume(
-            t -> t instanceof NotFoundException, t -> Mono.just(ResponseEntity.notFound().build()));
+            throwable -> throwable instanceof NotFoundException,
+            throwable -> Mono.just(ResponseEntity.notFound().build()));
   }
 
   @Override

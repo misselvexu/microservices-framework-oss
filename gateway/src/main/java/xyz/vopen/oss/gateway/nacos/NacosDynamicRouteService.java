@@ -50,15 +50,26 @@ public class NacosDynamicRouteService {
           NacosFactory.createConfigService(this.nacosProperties.getServerAddr());
       String content =
           configService.getConfig(dataId, group, this.nacosProperties.getRequestTimeout());
-      logger.info("nacos gateway config content : {}", content);
+      logger.info("[OSS-NACOS] nacos gateway config content : {}", content);
       configService.addListener(
           dataId,
           group,
           new Listener() {
             @Override
             public void receiveConfigInfo(String configInfo) {
-              RouteDefinition definition = JSON.parseObject(configInfo, RouteDefinition.class);
-              dynamicRouteService.update(definition);
+              logger.info(
+                  "[OSS-NACOS-LISTENER] received changed config, {}-{} : {}",
+                  dataId,
+                  group,
+                  configInfo);
+              try {
+                RouteDefinition definition = JSON.parseObject(configInfo, RouteDefinition.class);
+                dynamicRouteService.update(definition);
+              } catch (Exception e) {
+                logger.error(
+                    "[OSS-NACOS-LISTENER] invalid config content type, expect 'application/json'",
+                    e);
+              }
             }
 
             @Override
@@ -67,7 +78,7 @@ public class NacosDynamicRouteService {
             }
           });
     } catch (NacosException e) {
-      logger.warn("nacos listener execute failed", e);
+      logger.warn("[OSS-NACOS] nacos listener execute failed", e);
     }
   }
 }
