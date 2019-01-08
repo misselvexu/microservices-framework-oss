@@ -13,9 +13,18 @@
     </parent>
 
     <groupId>xyz.vopen.oss</groupId>
-    <artifactId>alibaba-oss-discovery</artifactId>
+    <artifactId>alibaba-oss-services</artifactId>
     <version>0.2.1.BUILD-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>Spring Cloud Alibaba OSS Discovery Nacos :: ${project.version}</name>
+    <packaging>pom</packaging>
+    <name>Spring Cloud Alibaba OSS Services Modules :: ${project.version}</name>
 
+    <modules>
+        <module>auth</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+
+        </dependencies>
+    </dependencyManagement>
 </project>

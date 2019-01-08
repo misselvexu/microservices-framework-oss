@@ -1,0 +1,14 @@
+{
+  "filters": [],
+  "id": "auth-provider",
+  "order": 0,
+  "predicates": [
+    {
+      "args": {
+        "pattern": "/auth"
+      },
+      "name": "Path"
+    }
+  ],
+  "uri": "lb://auth-provider"
+}

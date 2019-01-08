@@ -7,15 +7,27 @@
 
     <parent>
         <groupId>xyz.vopen.oss</groupId>
-        <artifactId>alibaba-oss-parent</artifactId>
+        <artifactId>alibaba-oss-services</artifactId>
         <version>0.2.1.BUILD-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>xyz.vopen.oss</groupId>
-    <artifactId>alibaba-oss-discovery</artifactId>
+    <artifactId>alibaba-oss-auth</artifactId>
     <version>0.2.1.BUILD-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Spring Cloud Alibaba OSS Discovery Nacos :: ${project.version}</name>
+    <name>Spring Cloud Alibaba OSS Auth Service Module :: ${project.version}</name>
+
+    <dependencies>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
