@@ -24,7 +24,7 @@ public class AuthEndpoint {
     this.authServiceClient = authServiceClient;
   }
 
-  @GetMapping("/account/{passportUid}")
+  @GetMapping("/consumer/auth/account/{passportUid}")
   ResponseEntity<Account> queryAccount(@PathVariable Long passportUid) {
     return ResponseEntity.ok(this.authServiceClient.info(passportUid));
   }

@@ -7,6 +7,11 @@ import xyz.vopen.oss.services.auth.bean.Account;
 import xyz.vopen.oss.services.auth.exception.AuthException;
 
 import javax.annotation.PostConstruct;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import java.util.Map;
 
 /**
@@ -16,6 +21,7 @@ import java.util.Map;
  * @version ${project.version} - 2019-01-11.
  */
 @Service
+@Path("/auth")
 public class AuthService implements AuthApi {
 
   private Map<Long, Account> cache = Maps.newHashMap();
@@ -33,7 +39,10 @@ public class AuthService implements AuthApi {
    * @throws AuthException auth exception throw
    */
   @Override
-  public Account queryAccount(Long passportUid) throws AuthException {
+  @GET
+  @Path("/account/{passportUid}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Account queryAccount(@PathParam("passportUid") Long passportUid) throws AuthException {
     return cache.get(passportUid);
   }
 }
