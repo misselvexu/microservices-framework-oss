@@ -28,6 +28,8 @@ Java Micro-services Base on `Spring Cloud Alibaba`
 
 ## Quick Start
 
+> building
+
 ## Bugs and Feedback
 
 For bug report, questions and discussions please submit [GitHub Issues](https://github.com/misselvexu/alibaba-oss/issues).
