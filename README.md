@@ -21,7 +21,7 @@ Java Micro-services Base on `Spring Cloud Alibaba`
 | Apache Dubbo | `2.6.5` | -  |
 | Alibaba Nacos | `0.7.0` | -  |
 | Apache RocketMQ | `4.3.2` | -  |
-| Spring Cloud Alibaba | `0.2.1.RELEASE` | -  |
+| Spring Cloud Alibaba | `0.9.1.RELEASE` | -  |
 
 
 ## Documentation
