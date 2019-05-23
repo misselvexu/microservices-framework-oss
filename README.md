@@ -16,7 +16,7 @@ Java Micro-services Base on `Spring Cloud Alibaba`
 | Framework Name | Version | Mark |
 | --- | --- | --- |
 | JDK | `1.8` | `OpenJDK` |
-| Spring Boot | `2.0.5` | -  |
+| Spring Boot | `2.0.8` | -  |
 | Spring Cloud | `Finchley SR2` | -  |
 | Apache Dubbo | `2.6.5` | -  |
 | Alibaba Nacos | `0.7.0` | -  |
