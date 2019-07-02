@@ -17,11 +17,11 @@ Java Micro-services Base on `Spring Cloud Alibaba`
 | --- | --- | --- |
 | JDK | `1.8` | `OpenJDK` |
 | Spring Boot | `2.0.8` | -  |
-| Spring Cloud | `Finchley SR2` | -  |
-| Apache Dubbo | `2.6.5` | -  |
-| Alibaba Nacos | `0.7.0` | -  |
+| Spring Cloud | `Finchley SR3` | -  |
+| Apache Dubbo | `2.7.2` | -  |
+| Alibaba Nacos | `1.0.0` | -  |
 | Apache RocketMQ | `4.3.2` | -  |
-| Spring Cloud Alibaba | `0.9.1.RELEASE` | -  |
+| Spring Cloud Alibaba | `0.2.1.RELEASE` | -  |
 
 
 ## Documentation
