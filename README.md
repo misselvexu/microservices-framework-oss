@@ -22,6 +22,7 @@ Java Micro-services Base on `Spring Cloud Alibaba`
 | Alibaba Nacos | `1.1.0` | -  |
 | Apache RocketMQ | `4.4.5` | -  |
 | Spring Cloud Alibaba | `0.2.2.RELEASE` | -  |
+| SOFAStack Cloud | `5.1.0` | -  |
 
 
 ## Documentation
